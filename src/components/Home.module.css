@@ -1,0 +1,19 @@
+.home {
+    background-image: url('../common/img/Group 5.png');
+
+}
+.homeBlock {
+    border: 1px solid black;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.banner1 {
+    padding: 60px 0px 50px;
+    width: 100%;
+}
+

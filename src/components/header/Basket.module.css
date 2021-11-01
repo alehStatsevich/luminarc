@@ -1,0 +1,59 @@
+.basket {
+    background-image: url('../../common/img/group6.png');
+}
+
+.cartBlock {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blockBasket {
+    display: flex;
+    flex-direction: row;
+}
+
+.decInc {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.basketImg {
+    width: 225px;
+    height: 225px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.del {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    color: #FB2E86;
+    cursor: pointer;
+}
+
+.num {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #FB2E86;
+    font-size: 25px;
+    margin: 0 20px;
+}
+.img{
+    width: 20px;
+}
+
+@media screen and (max-width: 769px) {
+    .cartBlock {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+}
