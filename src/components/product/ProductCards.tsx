@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './ProductCards.module.css';
 import styles from '../../common/Conteiner.module.css'
-import photoBasket from '../../common/img/basket.png'
+import photoBasket from '../../common/img/basket 1.png'
 import {useDispatch} from "react-redux";
 import {addProductBasketAC} from "../../state/app-reducer";
 
@@ -45,18 +45,20 @@ export const ProductCards = (props: ProductType) => {
                 </div>
                 <div className={style.workInfo}>
                     <h3 className={style.productTitle}>{props.product.name}</h3>
-                    <h3 className={style.productTitle}>{props.product.id}</h3>
+                    {/*<h3 className={style.productTitle}>{props.product.id}</h3>*/}
                     {props.product.pricePromotial?.priceFormatted ?
                         <span className={style.pricePromotial}>{props.product.pricePromotial.priceFormatted}</span>
                         : <span>{props.product.price.priceFormatted}</span>}
-                    <button className={style.btn} onClick={addProduct} disabled={disable} >
+                    <button className={style.btn} style={disable ?{backgroundColor:"#cc016a"}:{} } onClick={addProduct}
+                            disabled={disable}
+                    >
                         <img src={photoBasket} className={style.basket} alt="photoBasket"/>
                         В корзину
                     </button>
                 </div>
             </div>
         </div>
-        </div>
+         </div>
     );
 }
 

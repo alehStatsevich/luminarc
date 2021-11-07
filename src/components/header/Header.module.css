@@ -47,6 +47,7 @@
     bottom: -5px;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 .search {
