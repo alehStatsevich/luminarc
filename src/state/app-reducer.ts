@@ -23,7 +23,7 @@ export type ProductType = {
     id: string,
     items: Array<ProductsType>
 }
-export type ElementType ={
+export type ElementType = {
     product: ProductsType
     count: number
 }
@@ -41,7 +41,7 @@ export type addProductBasketType = ReturnType<typeof addProductBasketAC>
 export type addProductType = ReturnType<typeof addProductAC>
 export type deleteProductAC = ReturnType<typeof deleteProductAC>
 export type deleteAllProductAC = ReturnType<typeof deleteAllProductAC>
-type ActionsType = addProductBasketType|addProductType|deleteProductAC|deleteAllProductAC
+type ActionsType = addProductBasketType | addProductType | deleteProductAC | deleteAllProductAC
 
 export const appReducer = (state = initialState, action: ActionsType): initialStateType => {
     switch (action.type) {
@@ -49,7 +49,7 @@ export const appReducer = (state = initialState, action: ActionsType): initialSt
             const copyState = {...state}
             state.elements.forEach(e => {
                 let item = e.items.find(i => i.id === action.id);
-                item && copyState.elementsForBasket.push({ product: item, count: 1 })
+                item && copyState.elementsForBasket.push({product: item, count: 1})
             })
             return copyState
         }
@@ -89,7 +89,7 @@ const initialState: initialStateType = {
     elementsForBasket: [],
     elements: [
         {
-            id: 'Сервизы столовые',
+            id: "Сервизы столовые",
             items: [
                 {
                     "id": "e859e78c-1309-40fd-92a0-efa37b9cd4ea",
@@ -152,7 +152,7 @@ const initialState: initialStateType = {
             ],
         },
         {
-            id: 'Сервизы чайные',
+            id: "Сервизы чайные",
             items: [
                 {
                     "id": "5007aeb3-21ec-4052-9664-b97ece3807e8",
@@ -164,36 +164,12 @@ const initialState: initialStateType = {
                     "decimal": 2,
                     "image": "headphones2.png",
                 },
-                {
-                    "id": "7f39a9a8-4f3d-44ef-bce6-4209688754e6",
-                    "name": "Incredible chair",
-                    "price": {
-                        "amount": 11999,
-                        "priceFormatted": "$119.00"
-                    },
-                    "decimal": 2,
-                    "image": "chair3.png",
-                },
-                {
-                    "id": "de8d194a-7e5b-476a-8cb5-6b58b3405f4c",
-                    "name": "Almost gaming headphones",
-                    "price": {
-                        "amount": 7900,
-                        "priceFormatted": "$79.00"
-                    },
-                    "decimal": 2,
-                    "image": "headphones2.png",
-                },
-                {
-                    "id": "74b607a0-a135-4852-8631-cea25df6ae72",
-                    "name": "Chair for you",
-                    "price": {
-                        "amount": 18999,
-                        "priceFormatted": "$189.99"
-                    },
-                    "decimal": 2,
-                    "image": "chair4.png",
-                },
+            ]
+        },
+
+        {
+            id: "Тарелки",
+            items: [
                 {
                     "id": "5431d5df-710a-48fc-b35e-13b7c3b9e538",
                     "name": "Almost gaming headphones",
@@ -214,6 +190,11 @@ const initialState: initialStateType = {
                     "decimal": 2,
                     "image": "chair4.png",
                 },
+            ]
+        },
+        {
+            id:  "Салатники",
+            items: [
                 {
                     "id": "6302f1d2-ae70-45fd-b58b-2f6804d7b5a8",
                     "name": "Red headphones",
@@ -237,7 +218,11 @@ const initialState: initialStateType = {
                     },
                     "decimal": 2,
                     "image": "chair3.png",
-                },
+                },]
+        },
+        {
+            id:  "Блюда | Селедочницы",
+            items: [
                 {
                     "id": "cd2de511-da5c-441f-9dc6-d991b3983553",
                     "name": "Red headphones",
@@ -261,7 +246,11 @@ const initialState: initialStateType = {
                     },
                     "decimal": 2,
                     "image": "chair4.png",
-                },
+                },]
+        },
+        {
+            id: "Бокалы | Фужеры",
+            items: [
                 {
                     "id": "2254c925-d39f-44f4-b565-b636c905e7a3",
                     "name": "Cheap smartwatch",
@@ -299,6 +288,41 @@ const initialState: initialStateType = {
 
             ]
         },
+        {
+            id:  "Стаканы | Рюмки",
+            items: [
+                {
+                    "id": "7f39a9a8-4f3d-44ef-bce6-4209688754e6",
+                    "name": "Incredible chair",
+                    "price": {
+                        "amount": 11999,
+                        "priceFormatted": "$119.00"
+                    },
+                    "decimal": 2,
+                    "image": "chair3.png",
+                },
+                {
+                    "id": "de8d194a-7e5b-476a-8cb5-6b58b3405f4c",
+                    "name": "Almost gaming headphones",
+                    "price": {
+                        "amount": 7900,
+                        "priceFormatted": "$79.00"
+                    },
+                    "decimal": 2,
+                    "image": "headphones2.png",
+                },
+                {
+                    "id": "74b607a0-a135-4852-8631-cea25df6ae72",
+                    "name": "Chair for you",
+                    "price": {
+                        "amount": 18999,
+                        "priceFormatted": "$189.99"
+                    },
+                    "decimal": 2,
+                    "image": "chair4.png",
+                },
+            ]
+        }
 
     ]
 }

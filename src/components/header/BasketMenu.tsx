@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import {PATH} from "../../common/Routes";
 import style from "./BasketMenu.module.css";
@@ -10,6 +10,9 @@ import {AppRootStateType} from "../../state/store";
 
 const BasketMenu = () => {
     const count = useSelector<AppRootStateType, any>(state => state.products.elementsForBasket)
+    // useEffect(() => {
+    //
+    // }, [count])
     return (
         <div>
             <div className={style.block}>
