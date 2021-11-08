@@ -164,6 +164,16 @@ const initialState: initialStateType = {
                     "decimal": 2,
                     "image": "headphones2.png",
                 },
+                {
+                    "id": "5007aeb3-21ec-4052-9664-b97ece3807e9",
+                    "name": "Almost gaming headphones",
+                    "price": {
+                        "amount": 7900,
+                        "priceFormatted": "$79.00"
+                    },
+                    "decimal": 2,
+                    "image": "headphones2.png",
+                },
             ]
         },
 

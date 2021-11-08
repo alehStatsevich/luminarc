@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import style from './ProductCards.module.css';
 import styles from '../../common/Conteiner.module.css'
 import photoBasket from '../../common/img/basket 1.png'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addProductBasketAC} from "../../state/app-reducer";
+import {AppRootStateType} from "../../state/store";
 
 
 
@@ -30,6 +31,7 @@ export type ProductType = {
 
 export const ProductCards = (props: ProductType) => {
     const [disable, setDisable] = useState(false);
+    const count = useSelector<AppRootStateType, any>(state => state.products.elementsForBasket);
     const dispatch = useDispatch()
     const addProduct = () => {
         const action = addProductBasketAC(props.product.id)
@@ -53,7 +55,8 @@ export const ProductCards = (props: ProductType) => {
                             disabled={disable}
                     >
                         <img src={photoBasket} className={style.basket} alt="photoBasket"/>
-                        В корзину
+                        {/*В корзину*/}
+                        <span>{count.length > 0 ? <span>Товар в корзине</span> : <span>В корзину</span>}</span>
                     </button>
                 </div>
             </div>
