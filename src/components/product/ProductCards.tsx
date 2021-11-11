@@ -45,7 +45,7 @@ export const ProductCards = (props: ProductType) => {
                         <h3 className={style.productTitle}>{props.product.id}</h3>
                         {props.product.pricePromotial?.priceFormatted ?
                             <span className={style.pricePromotial}>{props.product.pricePromotial.priceFormatted}</span>
-                            : <span>{props.product.price.priceFormatted}</span>}
+                            : <span className={style.price}>{props.product.price.priceFormatted}</span>}
                         <button className={style.btn}
                                 style={disable ? {backgroundColor: "#cc016a"} : {}}
                                 onClick={addProduct}
