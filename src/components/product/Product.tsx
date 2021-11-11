@@ -8,11 +8,10 @@ import style from "./Product.module.css"
 
 
 const Product = () => {
-    const {title} = useParams<{ title: string }>();
+    const {id} = useParams<{ id: string }>();
     const elements = useSelector<AppRootStateType, any>(state => state.products.elements)
-    console.log(elements)
     const el = elements.find((el: ProductType) => {
-        return el.id === title
+        return el.id === id
     })
     return (
         <div className={style.block}>

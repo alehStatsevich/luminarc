@@ -1,5 +1,7 @@
 .basket {
     background-image: url('../../common/img/group6.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .cartBlock {

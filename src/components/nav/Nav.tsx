@@ -22,7 +22,6 @@ const Nav = () => {
             <NavLink to={PATH.REVIEWS} className={style.link} activeStyle={{
                 color: "#FB2E86"
             }}>Отзывы</NavLink>
-
         </div>
     );
 };

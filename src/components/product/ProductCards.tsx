@@ -7,7 +7,6 @@ import {addProductBasketAC} from "../../state/app-reducer";
 import {AppRootStateType} from "../../state/store";
 
 
-
 type PriceType = {
     amount: number,
     priceFormatted: string
@@ -22,8 +21,7 @@ type ProductsType = {
     price: PriceType,
     pricePromotial?: pricePromotialType,
     decimal: number,
-    image: any
-
+    image: any,
 }
 export type ProductType = {
     product: ProductsType
@@ -40,28 +38,26 @@ export const ProductCards = (props: ProductType) => {
     }
     return (
         <div className={styles.basketProductContainer}>
-        <div className={style.productCardBlock}>
-            <div>
-                <div className={style.icon}>
+            <div className={style.productCardBlock}>
                     <img src={props.product.image} className={style.image}/>
-                </div>
-                <div className={style.workInfo}>
-                    <h3 className={style.productTitle}>{props.product.name}</h3>
-                    {/*<h3 className={style.productTitle}>{props.product.id}</h3>*/}
-                    {props.product.pricePromotial?.priceFormatted ?
-                        <span className={style.pricePromotial}>{props.product.pricePromotial.priceFormatted}</span>
-                        : <span>{props.product.price.priceFormatted}</span>}
-                    <button className={style.btn} style={disable ?{backgroundColor:"#cc016a"}:{} } onClick={addProduct}
-                            disabled={disable}
-                    >
-                        <img src={photoBasket} className={style.basket} alt="photoBasket"/>
-                        {/*В корзину*/}
-                        <span>{count.length > 0 ? <span>Товар в корзине</span> : <span>В корзину</span>}</span>
-                    </button>
-                </div>
+                    <div className={style.workInfo}>
+                        <h3 className={style.productTitle}>{props.product.name}</h3>
+                        <h3 className={style.productTitle}>{props.product.id}</h3>
+                        {props.product.pricePromotial?.priceFormatted ?
+                            <span className={style.pricePromotial}>{props.product.pricePromotial.priceFormatted}</span>
+                            : <span>{props.product.price.priceFormatted}</span>}
+                        <button className={style.btn}
+                                style={disable ? {backgroundColor: "#cc016a"} : {}}
+                                onClick={addProduct}
+                                disabled={disable}
+                        >
+                            <img src={photoBasket} className={style.basket} alt="photoBasket"/>
+                            {/*В корзину*/}
+                            <span>{disable ? "Товар в корзине" : "В корзину"}</span>
+                        </button>
+                    </div>
             </div>
         </div>
-         </div>
     );
 }
 

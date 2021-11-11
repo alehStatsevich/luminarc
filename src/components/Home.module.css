@@ -1,5 +1,7 @@
 .home {
     background-image: url('../common/img/Group 5.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 
 }
 .homeBlock {

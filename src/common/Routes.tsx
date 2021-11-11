@@ -54,7 +54,7 @@ export const PATH = {
     CONTACT: '/contact',
     GUARANTEE: '/guarantee',
     REVIEWS: '/reviews',
-    PRODUCT: '/products/:title',
+    PRODUCT: '/products/:id',
     // PRODUCT1: '/product1',
     // PRODUCT2: '/product2',
     // PRODUCT3: '/product3',

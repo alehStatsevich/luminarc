@@ -1,18 +1,22 @@
 .productCardBlock{
     width: 100%;
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0;
 }
+
 .image{
     width: 225px;
     height: 225px;
     border-radius: 20px;
-    margin: 20px 0;
+    margin-right: 50px;
 }
 .workInfo{
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
 }
 
 .btn {

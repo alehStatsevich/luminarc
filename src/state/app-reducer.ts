@@ -37,6 +37,9 @@ export const addProductBasketAC = (id: string) => ({type: 'ADD_PRODUCT_BASKET', 
 export const addProductAC = (id: string) => ({type: 'ADD_PRODUCT', id} as const)
 export const deleteProductAC = (id: string) => ({type: 'DELETE_PRODUCT', id} as const)
 export const deleteAllProductAC = (id: string) => ({type: 'DELETE_ALL_PRODUCT', id} as const)
+
+
+
 export type addProductBasketType = ReturnType<typeof addProductBasketAC>
 export type addProductType = ReturnType<typeof addProductAC>
 export type deleteProductAC = ReturnType<typeof deleteProductAC>
@@ -48,7 +51,9 @@ export const appReducer = (state = initialState, action: ActionsType): initialSt
         case 'ADD_PRODUCT_BASKET': {
             const copyState = {...state}
             state.elements.forEach(e => {
-                let item = e.items.find(i => i.id === action.id);
+                let item = e.items.find(i => {
+                    return i.id === action.id
+                });
                 item && copyState.elementsForBasket.push({product: item, count: 1})
             })
             return copyState
@@ -78,7 +83,6 @@ export const appReducer = (state = initialState, action: ActionsType): initialSt
         case 'DELETE_ALL_PRODUCT': {
             const copyState = {...state}
             copyState.elementsForBasket = copyState.elementsForBasket.filter(el => el.product.id !== action.id)
-
             return copyState
         }
         default:
@@ -103,7 +107,7 @@ const initialState: initialStateType = {
                         "priceFormatted": "$26.00"
                     },
                     "decimal": 2,
-                    "image": DinnerSets
+                    "image": DinnerSets,
                 },
                 {
                     "id": "f0f58263-cd0f-4a25-8205-4a89706e203a",
@@ -113,7 +117,7 @@ const initialState: initialStateType = {
                         "priceFormatted": "$149.99"
                     },
                     "decimal": 2,
-                    "image": DinnerSets1
+                    "image": DinnerSets1,
                 },
                 {
                     "id": "30d00737-5a93-4d59-9bea-201d30fb1d0a",
@@ -203,7 +207,7 @@ const initialState: initialStateType = {
             ]
         },
         {
-            id:  "Салатники",
+            id: "Салатники",
             items: [
                 {
                     "id": "6302f1d2-ae70-45fd-b58b-2f6804d7b5a8",
@@ -231,7 +235,7 @@ const initialState: initialStateType = {
                 },]
         },
         {
-            id:  "Блюда | Селедочницы",
+            id: "Блюда | Селедочницы",
             items: [
                 {
                     "id": "cd2de511-da5c-441f-9dc6-d991b3983553",
@@ -299,7 +303,7 @@ const initialState: initialStateType = {
             ]
         },
         {
-            id:  "Стаканы | Рюмки",
+            id: "Стаканы | Рюмки",
             items: [
                 {
                     "id": "7f39a9a8-4f3d-44ef-bce6-4209688754e6",
